@@ -6,16 +6,18 @@
 			:usCases="usCases"
 			:globalCases="globalCases"
 		/>
+		<Footer />
 	</div>
 </template>
 
 <script>
 import Map from "./components/Map.vue";
+import Footer from "./components/Footer.vue";
 import * as d3 from "d3";
 
 export default {
 	name: "App",
-	components: { Map },
+	components: { Map, Footer },
 	data() {
 		return {
 			states: [],

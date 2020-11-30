@@ -26,7 +26,7 @@ export default {
 		};
 	},
 	async mounted() {
-		const states = await d3.json("/data/states.json");
+		const states = await d3.json("./data/states.json");
 		this.states = states;
 
 		const us = await d3.csv(

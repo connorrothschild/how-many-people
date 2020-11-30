@@ -3,7 +3,7 @@
 		<div class="py-5 has-background-light">
 			<div class="max-width-900">
 				<p class="title is-spaced high-line-height">
-					<span class="highlight-underline" @click="toggleusSelected()">{{
+					<span class="highlight-underline" @click="toggleSelected()">{{
 						this.usSelected ? "In the United States" : "Around the world"
 					}}</span
 					>, {{ this.millionsFormat(this.totalCases) }} people have had
@@ -84,8 +84,6 @@ export default {
 			cellSize: 55,
 			userTotal: 0,
 			selectedStates: [],
-			alreadyOver: false,
-			stateResponsibleForOver: null,
 			usSelected: false,
 		};
 	},
@@ -123,16 +121,20 @@ export default {
 				});
 			} else {
 				if (this.userTotal + population > this.totalCases) {
-					console.log("This state would put over total!");
+					console.log("This state would put us over the total!");
 				} else {
 					this.userTotal += population;
 					this.selectedStates.push(name);
 				}
 			}
 		},
-		toggleusSelected() {
+		toggleSelected() {
 			this.usSelected = !this.usSelected;
-			console.log("US Selected:", this.usSelected);
+
+			if (this.userTotal > this.totalCases) {
+				this.userTotal = 0;
+				this.selectedStates = [];
+			}
 		},
 		millionsFormat: d3.format(".3s"),
 		thousandsFormat: d3.format(".1s"),

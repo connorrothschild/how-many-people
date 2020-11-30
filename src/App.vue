@@ -26,7 +26,9 @@ export default {
 		};
 	},
 	async mounted() {
-		const states = await d3.json("./data/states.json");
+		const states = await d3.json(
+			"https://raw.githubusercontent.com/connorrothschild/how-many-people/master/public/data/states.json"
+		);
 		this.states = states;
 
 		const us = await d3.csv(

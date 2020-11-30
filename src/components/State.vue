@@ -11,10 +11,10 @@
 		}"
 	>
 		<rect :width="cellSize - 2" :height="cellSize - 2"></rect>
-		<text :x="cellSize / 2" :y="cellSize / 2" dy=".35em">
+		<text :x="cellSize / 2" :y="cellSize / 3.5" dy=".55em">
 			{{ state.id }}
 		</text>
-		<text class="population" :x="cellSize - 4" :y="cellSize - 5">
+		<text class="population" :x="cellSize / 2" :y="(cellSize / 4) * 3">
 			{{ thousandsFormat(state.population) }}
 		</text>
 	</g>
@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
 .disabled {
 	rect {
-		fill: #eee;
+		fill: whitesmoke;
 	}
 
 	text {
@@ -59,11 +59,10 @@ export default {
 	text {
 		fill: white;
 		font-weight: 600;
-		// font-size: 14px;
 	}
 }
 
 rect {
-	fill: #dedede;
+	fill: #eeeeee;
 }
 </style>

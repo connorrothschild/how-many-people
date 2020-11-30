@@ -34,8 +34,10 @@ export default {
 		const us = await d3.csv(
 			"https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us.csv"
 		);
-		const global = await d3.json("https://api.covid19api.com/summary");
-		this.globalCases = +global.Global.TotalConfirmed;
+		const global = await d3.json(
+			"https://coronavirus-19-api.herokuapp.com/all"
+		);
+		this.globalCases = +global.cases;
 		this.usCases = +us[0].cases;
 
 		// console.log(states);

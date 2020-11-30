@@ -28,9 +28,20 @@
 				</span>
 			</div>
 		</div>
-		<p class="mt-3 heading">
-			{{ this.millionsFormat(this.remainingCases) }} remaining
-		</p>
+		<div class="is-inline-flex place-center mt-3">
+			<p class="heading is-size-6 mr-2 mb-0">
+				{{ this.millionsFormat(this.remainingCases) }} remaining
+			</p>
+			<button
+				class="button is-small ml-2"
+				@click="
+					selectedStates = [];
+					userTotal = 0;
+				"
+			>
+				Reset
+			</button>
+		</div>
 		<div id="viz">
 			<svg :width="this.width" :height="this.height">
 				<g
@@ -164,6 +175,10 @@ export default {
 	}
 }
 
+.place-center {
+	place-items: center;
+}
+
 .max-width-900 {
 	max-width: 900px;
 	margin: 0 auto;
@@ -198,15 +213,15 @@ svg {
 
 .state {
 	text {
-		font-size: 12px;
+		font-size: 14px;
 		text-anchor: middle;
 		stroke: none;
 		pointer-events: none;
 	}
 
 	.population {
-		font-size: 10px;
-		text-anchor: end;
+		font-size: 11px;
+		text-anchor: center;
 	}
 
 	&:not(.disabled):hover {

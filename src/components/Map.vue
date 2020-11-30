@@ -3,10 +3,9 @@
 		<div class="py-5 has-background-light">
 			<div class="max-width-900">
 				<p class="title is-spaced high-line-height">
-					<span
-						class="highlight-underline"
-						v-on:click.native="toggleSelected()"
-						>{{ this.usSelected ? "In the United States" : "Globally" }}</span
+					<span class="highlight-underline" @click="toggleSelected()">{{
+						this.usSelected ? "In the United States" : "Globally"
+					}}</span
 					>, {{ this.millionsFormat(this.totalCases) }} people have had
 					COVID-19.
 				</p>
@@ -35,32 +34,20 @@
 		<div id="viz">
 			<svg :width="this.width" :height="this.height">
 				<g
-					class="foreground"
+					class="canvas"
 					:transform="`translate(${margin / 2}, ${margin / 2})`"
 				>
-					<g
+					<State
 						v-for="(state, index) in states"
 						class="state"
 						:key="index"
-						:transform="`translate(${state.grid.x * cellSize}, ${
-							(state.grid.y - 1) * cellSize
-						})`"
-						v-on:click.native="addToTotal(state)"
-						v-bind:class="{
-							disabled:
-								userTotal + state.population > totalCases &&
-								!selectedStates.includes(state.name),
-							selected: selectedStates.includes(state.name),
-						}"
-					>
-						<rect :width="cellSize - 2" :height="cellSize - 2"></rect>
-						<text :x="cellSize / 2" :y="cellSize / 2" dy=".35em">
-							{{ state.id }}
-						</text>
-						<text class="population" :x="cellSize - 4" :y="cellSize - 5">
-							{{ thousandsFormat(state.population) }}
-						</text>
-					</g>
+						@click.native="addToTotal(state)"
+						:state="state"
+						:cellSize="cellSize"
+						:selectedStates="selectedStates"
+						:userTotal="userTotal"
+						:totalCases="totalCases"
+					/>
 				</g>
 			</svg>
 		</div>
@@ -69,9 +56,11 @@
 
 <script>
 import * as d3 from "d3";
+import State from "@/components/State.vue";
 
 export default {
 	name: "Map",
+	components: { State },
 	props: {
 		states: Array,
 		usCases: Number,
@@ -107,9 +96,6 @@ export default {
 				svg.attr("width", targetWidth);
 				svg.attr("height", Math.round(targetWidth / aspect));
 			}
-		},
-		nozoom() {
-			event.preventDefault();
 		},
 		addToTotal(d) {
 			const name = d.name;
@@ -155,12 +141,9 @@ export default {
 		},
 	},
 	mounted() {
-		const { nozoom, responsivefy } = this;
+		const { responsivefy } = this;
 
-		d3.select("#viz svg")
-			.on("touchstart", nozoom)
-			.on("touchmove", nozoom)
-			.call(responsivefy);
+		d3.select("#viz svg").call(responsivefy);
 	},
 };
 </script>
@@ -198,7 +181,7 @@ export default {
 	line-height: 1.5 !important;
 }
 
-.foreground {
+.canvas {
 	cursor: pointer;
 	pointer-events: all;
 }
@@ -211,16 +194,6 @@ export default {
 svg {
 	max-height: 100%;
 	padding: 15px;
-}
-
-.disabled {
-	rect {
-		fill: #eee;
-	}
-
-	text {
-		fill: grey;
-	}
 }
 
 .state {
@@ -243,21 +216,5 @@ svg {
 	&.disabled:hover {
 		cursor: not-allowed;
 	}
-}
-
-.selected {
-	rect {
-		fill: #f66c5e !important;
-	}
-
-	text {
-		fill: white;
-		font-weight: 600;
-		// font-size: 14px;
-	}
-}
-
-rect {
-	fill: #dedede;
 }
 </style>

@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
 .disabled {
 	rect {
-		fill: whitesmoke;
+		fill: white;
 	}
 
 	text {

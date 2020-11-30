@@ -2,14 +2,14 @@
 	<section>
 		<div class="py-5 has-background-light">
 			<div class="max-width-900">
-				<p class="title is-spaced high-line-height">
+				<p class="title is-spaced high-line-height px-1">
 					<span class="highlight-underline" @click="toggleSelected()">{{
 						this.usSelected ? "In the United States" : "Globally"
 					}}</span
-					>, {{ this.millionsFormat(this.totalCases) }} people have had
-					COVID-19.
+					>, {{ this.millionsFormat(this.totalCases) }} people have tested
+					positive for COVID-19.
 				</p>
-				<p class="subtitle mb-2">
+				<p class="subtitle mb-2 px-1">
 					Just how many people is that? That's equivalent to the combined
 					populations of:
 				</p>

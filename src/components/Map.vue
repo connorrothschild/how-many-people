@@ -3,9 +3,10 @@
 		<div class="py-5 has-background-light">
 			<div class="max-width-900">
 				<p class="title is-spaced high-line-height">
-					<span class="highlight-underline" @click="toggleSelected()">{{
-						this.usSelected ? "In the United States" : "Around the world"
-					}}</span
+					<span
+						class="highlight-underline"
+						v-on:click.native="toggleSelected()"
+						>{{ this.usSelected ? "In the United States" : "Globally" }}</span
 					>, {{ this.millionsFormat(this.totalCases) }} people have had
 					COVID-19.
 				</p>
@@ -44,7 +45,7 @@
 						:transform="`translate(${state.grid.x * cellSize}, ${
 							(state.grid.y - 1) * cellSize
 						})`"
-						@click="addToTotal(state)"
+						v-on:click.native="addToTotal(state)"
 						v-bind:class="{
 							disabled:
 								userTotal + state.population > totalCases &&

@@ -1,7 +1,12 @@
 <template>
 	<section>
 		<div class="py-5 has-background-light">
-			<p class="title is-spaced">{{ this.totalCases }} people have COVID-19.</p>
+			<p class="title is-spaced high-line-height">
+				<span class="highlight-underline" @click="toggleusSelected()">{{
+					this.usSelected ? "In the United States" : "Around the world"
+				}}</span
+				>, {{ this.totalCases }} people have had COVID-19.
+			</p>
 			<p class="subtitle mb-2">
 				Just how many people is that? That's equivalent to the total state
 				populations in:
@@ -10,7 +15,7 @@
 				class="is-inline-flex state-text-block"
 				v-if="selectedStates.length == 0"
 			>
-				Select a state
+				Select a state below
 			</p>
 			<span
 				class="is-inline-flex state-text-block"
@@ -63,6 +68,8 @@ export default {
 	name: "Map",
 	props: {
 		states: Array,
+		usCases: Number,
+		globalCases: Number,
 	},
 	data() {
 		return {
@@ -71,10 +78,10 @@ export default {
 			mapHeight: 8,
 			cellSize: 55,
 			userTotal: 0,
-			totalCases: 100,
 			selectedStates: [],
 			alreadyOver: false,
 			stateResponsibleForOver: null,
+			usSelected: false,
 		};
 	},
 	methods: {
@@ -118,6 +125,10 @@ export default {
 				}
 			}
 		},
+		toggleusSelected() {
+			this.usSelected = !this.usSelected;
+			console.log("US Selected:", this.usSelected);
+		},
 	},
 	computed: {
 		remainingCases: function () {
@@ -128,6 +139,9 @@ export default {
 		},
 		height: function () {
 			return this.mapHeight * this.cellSize + this.margin;
+		},
+		totalCases: function () {
+			return this.usSelected ? this.usCases : this.globalCases;
 		},
 	},
 	mounted() {
@@ -141,23 +155,20 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-.foreground {
+<style lang="scss">
+.highlight-underline {
+	border-bottom: 1px solid #f79696;
+	border-bottom-style: solid;
+	padding: 2px;
 	cursor: pointer;
-	pointer-events: all;
-}
+	transition: all 0.5s;
 
-.state text {
-	font-size: 12px;
-	text-anchor: middle;
-	stroke: none;
-	pointer-events: none;
-}
-
-.state .votes {
-	font-size: 10px;
-	text-anchor: end;
+	&:hover {
+		background: #f79696;
+		border-radius: 3px;
+		color: whitesmoke;
+		transition: all 0.5s;
+	}
 }
 
 .state-text-block {
@@ -166,6 +177,15 @@ export default {
 	margin: 2px;
 	border-radius: 3px;
 	color: white;
+}
+
+.high-line-height {
+	line-height: 1.5 !important;
+}
+
+.foreground {
+	cursor: pointer;
+	pointer-events: all;
 }
 
 #viz {
@@ -178,27 +198,50 @@ svg {
 	padding: 15px;
 }
 
-.disabled rect {
-	fill: #eee;
+.disabled {
+	rect {
+		fill: #eee;
+	}
+
+	text {
+		fill: grey;
+	}
 }
 
-.disabled text {
-	fill: grey;
+.state {
+	text {
+		font-size: 12px;
+		text-anchor: middle;
+		stroke: none;
+		pointer-events: none;
+	}
+
+	.votes {
+		font-size: 10px;
+		text-anchor: end;
+	}
+
+	&:not(.disabled):hover {
+		outline: 1px solid black;
+	}
+
+	&.disabled:hover {
+		cursor: not-allowed;
+	}
+}
+
+.selected {
+	rect {
+		fill: #f79696 !important;
+	}
+
+	text {
+		// fill: white;
+		font-weight: bold;
+	}
 }
 
 rect {
 	fill: #dedede;
-}
-
-.state:not(.disabled):hover {
-	outline: 1px solid black;
-}
-
-.state.disabled:hover {
-	cursor: not-allowed;
-}
-
-.selected rect {
-	fill: #f79696 !important;
 }
 </style>

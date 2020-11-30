@@ -1,6 +1,11 @@
 <template>
 	<div id="app">
-		<Map v-if="states.length > 0" :states="states" />
+		<Map
+			v-if="(states.length > 0) & usCases & globalCases"
+			:states="states"
+			:usCases="usCases"
+			:globalCases="globalCases"
+		/>
 	</div>
 </template>
 
@@ -14,12 +19,21 @@ export default {
 	data() {
 		return {
 			states: [],
+			usCases: null,
+			globalCases: null,
 		};
 	},
 	async mounted() {
 		const states = await d3.json("/data/states.json");
 		this.states = states;
 		console.log(states);
+
+		const us = await d3.csv(
+			"https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us.csv"
+		);
+		const global = await d3.json("https://api.covid19api.com/summary");
+		this.globalCases = +global.Global.TotalConfirmed;
+		this.usCases = +us[0].cases;
 	},
 };
 </script>

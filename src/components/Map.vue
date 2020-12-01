@@ -19,13 +19,15 @@
 				>
 					Select a state below
 				</p>
-				<span
-					class="is-inline-flex state-text-block"
-					v-for="(name, index) in selectedStates"
-					:key="index"
-				>
-					<p>{{ name }}</p>
-				</span>
+				<div class="max-width-700">
+					<span
+						class="is-inline-flex state-text-block"
+						v-for="(name, index) in selectedStates"
+						:key="index"
+					>
+						<p>{{ name }}</p>
+					</span>
+				</div>
 			</div>
 		</div>
 		<div class="is-inline-flex place-center mt-3">
@@ -231,5 +233,10 @@ svg {
 	&.disabled:hover {
 		cursor: not-allowed;
 	}
+}
+
+.max-width-700 {
+	max-width: 700px;
+	margin: 0 auto;
 }
 </style>

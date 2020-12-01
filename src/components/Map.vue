@@ -4,7 +4,7 @@
 			<div class="max-width-950">
 				<p class="title is-spaced high-line-height px-1">
 					<span class="highlight-underline" @click="toggleSelected()">{{
-						this.usSelected ? "In the United States" : "Globally"
+						this.usSelected ? "In the US" : "Globally"
 					}}</span
 					>, {{ this.millionsFormat(this.totalCases) }} people have tested
 					positive for COVID-19.

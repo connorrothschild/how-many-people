@@ -1,0 +1,359 @@
+[
+  {
+    "id": "AK",
+    "name": "Alaska",
+    "name_short": "Alaska",
+    "grid": {"x": 0, "y": 1},
+    "population": 731545
+  },
+  {
+    "id": "AL",
+    "name": "Alabama",
+    "name_short": "Ala.",
+    "grid": {"x": 7, "y": 7},
+    "population": 4903185
+  },
+  {
+    "id": "AR",
+    "name": "Arkansas",
+    "name_short": "Ark.",
+    "grid": {"x": 5, "y": 6},
+    "population": 3017804
+  },
+  {
+    "id": "AZ",
+    "name": "Arizona",
+    "name_short": "Ariz.",
+    "grid": {"x": 2, "y": 6},
+    "population": 7278717
+  },
+  {
+    "id": "CA",
+    "name": "California",
+    "name_short": "Calif.",
+    "grid": {"x": 1, "y": 5},
+    "population": 39512223
+  },
+  {
+    "id": "CO",
+    "name": "Colorado",
+    "name_short": "Colo.",
+    "grid": {"x": 3, "y": 5},
+    "population": 5758736
+  },
+  {
+    "id": "CT",
+    "name": "Connecticut",
+    "name_short": "Conn.",
+    "grid": {"x": 10, "y": 4},
+    "population": 3565287
+  },
+  {
+    "id": "DC",
+    "name": "District of Columbia",
+    "name_short": "D.C.",
+    "grid": {"x": 9, "y": 6},
+    "population": 705749
+  },
+  {
+    "id": "DE",
+    "name": "Delaware",
+    "name_short": "Del.",
+    "grid": {"x": 10, "y": 5},
+    "population": 973764
+  },
+  {
+    "id": "FL",
+    "name": "Florida",
+    "name_short": "Fla.",
+    "grid": {"x": 9, "y": 8},
+    "population": 21477737
+  },
+  {
+    "id": "GA",
+    "name": "Georgia",
+    "name_short": "Ga.",
+    "grid": {"x": 8, "y": 7},
+    "population": 10617423
+  },
+  {
+    "id": "HI",
+    "name": "Hawaii",
+    "name_short": "Hawaii",
+    "grid": {"x": 0, "y": 8},
+    "population": 1415872
+  },
+  {
+    "id": "IA",
+    "name": "Iowa",
+    "name_short": "Iowa",
+    "grid": {"x": 5, "y": 4},
+    "population":3155070
+  },
+  {
+    "id": "ID",
+    "name": "Idaho",
+    "name_short": "Idaho",
+    "grid": {"x": 2, "y": 3},
+    "population": 1787065
+  },
+  {
+    "id": "IL",
+    "name": "Illinois",
+    "name_short": "Ill.",
+    "grid": {"x": 6, "y": 3},
+    "population": 12671821
+  },
+  {
+    "id": "IN",
+    "name": "Indiana",
+    "name_short": "Ind.",
+    "grid": {"x": 6, "y": 4},
+    "population": 6732219
+  },
+  {
+    "id": "KS",
+    "name": "Kansas",
+    "name_short": "Kan.",
+    "grid": {"x": 4, "y": 6},
+    "population": 2913314
+  },
+  {
+    "id": "KY",
+    "name": "Kentucky",
+    "name_short": "Ky.",
+    "grid": {"x": 6, "y": 5},
+    "population": 4467673
+  },
+  {
+    "id": "LA",
+    "name": "Louisiana",
+    "name_short": "La.",
+    "grid": {"x": 5, "y": 7},
+    "population": 4648794
+  },
+  {
+    "id": "MA",
+    "name": "Massachusetts",
+    "name_short": "Mass.",
+    "grid": {"x": 11, "y": 3},
+    "population": 6892503
+  },
+  {
+    "id": "MD",
+    "name": "Maryland",
+    "name_short": "Md.",
+    "grid": {"x": 9, "y": 5},
+    "population": 6045680
+  },
+  {
+    "id": "ME",
+    "name": "Maine",
+    "name_short": "Maine",
+    "grid": {"x": 11, "y": 1},
+    "population": 1344212
+  },
+  {
+    "id": "MI",
+    "name": "Michigan",
+    "name_short": "Mich.",
+    "grid": {"x": 8, "y": 3},
+    "population": 9986857
+  },
+  {
+    "id": "MN",
+    "name": "Minnesota",
+    "name_short": "Minn.",
+    "grid": {"x": 5, "y": 3},
+    "population": 5639632
+  },
+  {
+    "id": "MO",
+    "name": "Missouri",
+    "name_short": "Mo.",
+    "grid": {"x": 5, "y": 5},
+    "population": 6137428
+  },
+  {
+    "id": "MS",
+    "name": "Mississippi",
+    "name_short": "Miss.",
+    "grid": {"x": 6, "y": 7},
+    "population": 2976149
+  },
+  {
+    "id": "MT",
+    "name": "Montana",
+    "name_short": "Mont.",
+    "grid": {"x": 3, "y": 3},
+    "population": 1068778
+  },
+  {
+    "id": "NC",
+    "name": "North Carolina",
+    "name_short": "N.C.",
+    "grid": {"x": 7, "y": 6},
+    "population": 10488084
+  },
+  {
+    "id": "ND",
+    "name": "North Dakota",
+    "name_short": "N.D.",
+    "grid": {"x": 4, "y": 3},
+    "population": 762062
+  },
+  {
+    "id": "NE",
+    "name": "Nebraska",
+    "name_short": "Neb.",
+    "grid": {"x": 4, "y": 5},
+    "population": 1934408
+  },
+  {
+    "id": "NH",
+    "name": "New Hampshire",
+    "name_short": "N.H.",
+    "grid": {"x": 11, "y": 2},
+    "population": 1359711
+  },
+  {
+    "id": "NJ",
+    "name": "New Jersey",
+    "name_short": "N.J.",
+    "grid": {"x": 9, "y": 4},
+    "population": 8882190
+  },
+  {
+    "id": "NM",
+    "name": "New Mexico",
+    "name_short": "N.M.",
+    "grid": {"x": 3, "y": 6},
+    "population": 2096829
+  },
+  {
+    "id": "NV",
+    "name": "Nevada",
+    "name_short": "Nev.",
+    "grid": {"x": 2, "y": 4},
+    "population": 3080156
+  },
+  {
+    "id": "NY",
+    "name": "New York",
+    "name_short": "N.Y.",
+    "grid": {"x": 9, "y": 3},
+    "population": 19453561
+  },
+  {
+    "id": "OH",
+    "name": "Ohio",
+    "name_short": "Ohio",
+    "grid": {"x": 7, "y": 4},
+    "population": 11689100
+  },
+  {
+    "id": "OK",
+    "name": "Oklahoma",
+    "name_short": "Okla.",
+    "grid": {"x": 4, "y": 7},
+    "population": 3956971
+  },
+  {
+    "id": "OR",
+    "name": "Oregon",
+    "name_short": "Ore.",
+    "grid": {"x": 1, "y": 4},
+    "population": 4217737
+  },
+  {
+    "id": "PA",
+    "name": "Pennsylvania",
+    "name_short": "Penn.",
+    "grid": {"x": 8, "y": 4},
+    "population": 12801989
+  },
+  {
+    "id": "RI",
+    "name": "Rhode Island",
+    "name_short": "R.I.",
+    "grid": {"x": 10, "y": 3},
+    "population": 1059361
+  },
+  {
+    "id": "SC",
+    "name": "South Carolina",
+    "name_short": "S.C.",
+    "grid": {"x": 8, "y": 6},
+    "population": 5148714
+  },
+  {
+    "id": "SD",
+    "name": "South Dakota",
+    "name_short": "S.D.",
+    "grid": {"x": 4, "y": 4},
+    "population": 884659
+  },
+  {
+    "id": "TN",
+    "name": "Tennessee",
+    "name_short": "Tenn.",
+    "grid": {"x": 6, "y": 6},
+    "population": 6829174
+  },
+  {
+    "id": "TX",
+    "name": "Texas",
+    "name_short": "Texas",
+    "grid": {"x": 4, "y": 8},
+    "population": 28995881
+  },
+  {
+    "id": "UT",
+    "name": "Utah",
+    "name_short": "Utah",
+    "grid": {"x": 2, "y": 5},
+    "population": 3205958
+  },
+  {
+    "id": "VA",
+    "name": "Virginia",
+    "name_short": "Va.",
+    "grid": {"x": 8, "y": 5},
+    "population": 8535519
+  },
+  {
+    "id": "VT",
+    "name": "Vermont",
+    "name_short": "Vt.",
+    "grid": {"x": 10, "y": 2},
+    "population": 623989
+  },
+  {
+    "id": "WA",
+    "name": "Washington",
+    "name_short": "Wash.",
+    "grid": {"x": 1, "y": 3},
+    "population": 7614893
+  },
+  {
+    "id": "WI",
+    "name": "Wisconsin",
+    "name_short": "Wis.",
+    "grid": {"x": 7, "y": 3},
+    "population": 5822434
+  },
+  {
+    "id": "WV",
+    "name": "West Virginia",
+    "name_short": "W.Va.",
+    "grid": {"x": 7, "y": 5},
+    "population": 1792147
+  },
+  {
+    "id": "WY",
+    "name": "Wyoming",
+    "name_short": "Wyo.",
+    "grid": {"x": 3, "y": 4},
+    "population": 578759
+  }
+]

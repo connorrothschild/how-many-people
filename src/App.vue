@@ -1,12 +1,14 @@
 <template>
 	<div id="app">
-		<Map
-			v-if="states.length > 0"
-			:states="states"
-			:usCases="usCases"
-			:globalCases="globalCases"
-		/>
-		<Footer />
+		<div v-if="usCases & globalCases">
+			<Map
+				v-if="states.length > 0"
+				:states="states"
+				:usCases="usCases"
+				:globalCases="globalCases"
+			/>
+			<Footer />
+		</div>
 	</div>
 </template>
 

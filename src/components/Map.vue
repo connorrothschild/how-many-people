@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<div class="py-5 has-background-light">
-			<div class="max-width-900">
+			<div class="max-width-950">
 				<p class="title is-spaced high-line-height px-1">
 					<span class="highlight-underline" @click="toggleSelected()">{{
 						this.usSelected ? "In the United States" : "Globally"
@@ -179,8 +179,8 @@ export default {
 	place-items: center;
 }
 
-.max-width-900 {
-	max-width: 900px;
+.max-width-950 {
+	max-width: 950px;
 	margin: 0 auto;
 }
 

@@ -34,7 +34,7 @@ export default {
 	},
 	methods: {
 		millionsFormat: d3.format(".3s"),
-		thousandsFormat: d3.format(".1s"),
+		thousandsFormat: d3.format(".2s"),
 	},
 	mounted() {},
 };
